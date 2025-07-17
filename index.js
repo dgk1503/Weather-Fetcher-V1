@@ -1,7 +1,8 @@
-import api_key from './api_key.js';
+
 const weather_form = document.querySelector(`.weather_form`)
 const city_input = document.querySelector(`.city_input`);
 const card = document.querySelector(`.card`);
+const api_key = `e8d0433e2df969ee92282de039488cc8`;
 
 
 weather_form.addEventListener("submit", async event => {
