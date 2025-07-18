@@ -113,7 +113,7 @@ function display_weather_info(data){
     visibility_display.textContent = `Visibility :${(visibility/1000).toFixed(2)} Km`;
     temp_display.textContent = `${(temp-273.15).toFixed(2)}°C`;
     humidity_display.textContent = `Humidity :${humidity}%`;
-    sea_level_display.textContent = `Sea Level :${sea_level ? sea_level : 'N/A'}`;
+    sea_level_display.textContent = `Sea Level :${sea_level ? sea_level : 'N/A'}hPa`;
     weather_description.textContent = capitalize(description);
     weather_emoji_display.textContent = get_weather_emoji(id);
     const seaLevelValue = sea_level ? sea_level : 0;
