@@ -1,8 +1,8 @@
-
+import api_key from './apikey.js';
 const weather_form = document.querySelector(`.weather_form`)
 const city_input = document.querySelector(`.city_input`);
 const card = document.querySelector(`.card`);
-const api_key = `e8d0433e2df969ee92282de039488cc8`;
+
 
 
 weather_form.addEventListener("submit", async event => {
@@ -40,6 +40,28 @@ async function get_weather_info(city){
 }
 
 function get_weather_emoji(weather_id){
+    // Change card gradient based on weather description
+    let gradient;
+    
+    if(weather_id >= 200 && weather_id < 300){
+        gradient = 'linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%)'; // blueish
+    } else if(weather_id >= 300 && weather_id < 500){
+        gradient = 'linear-gradient(180deg, #d7d2cc 0%, #304352 100%)'; // gray
+    } else if(weather_id >= 500 && weather_id < 600){
+        gradient = 'linear-gradient(180deg, #fceabb 0%, #f8b500 100%)'; // sunny yellow
+    } else if(weather_id >= 600 && weather_id < 700){
+        gradient = 'linear-gradient(180deg, #e0eafc 0%, #cfdef3 100%)'; // white/blue
+    } else if(weather_id >= 700 && weather_id < 800){
+        gradient = 'linear-gradient(180deg, #616161 0%, #9bc5c3 100%)'; // dark
+    } else if(weather_id === 800){
+        gradient = 'linear-gradient(180deg, #fceabb 0%, #f8b500 100%)'; // sunny yellow
+    } else if(weather_id >= 801 && weather_id < 810){
+        gradient = 'linear-gradient(180deg, #e0c3fc 0%, #8ec5fc 100%)'; // purple/blue
+    } else {
+        gradient = 'linear-gradient(180deg, #b2fefa 0%, #f6d365 100%)'; // default
+    }
+    card.style.background = gradient;
+
 
     switch(true){
         case (weather_id >= 200 && weather_id < 300):
@@ -70,25 +92,9 @@ function display_weather_info(data){
     card.textContent = "";
     card.style.display = "flex";
 
-    // Change card gradient based on weather description
-    let gradient;
-    const desc = description.toLowerCase();
-    if(desc.includes('rain') || desc.includes('drizzle')){
-        gradient = 'linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%)'; // blueish
-    } else if(desc.includes('cloud')){
-        gradient = 'linear-gradient(180deg, #d7d2cc 0%, #304352 100%)'; // gray
-    } else if(desc.includes('clear')){
-        gradient = 'linear-gradient(180deg, #fceabb 0%, #f8b500 100%)'; // sunny yellow
-    } else if(desc.includes('snow')){
-        gradient = 'linear-gradient(180deg, #e0eafc 0%, #cfdef3 100%)'; // white/blue
-    } else if(desc.includes('storm') || desc.includes('thunder')){
-        gradient = 'linear-gradient(180deg, #616161 0%, #9bc5c3 100%)'; // dark
-    } else if(desc.includes('mist') || desc.includes('fog') || desc.includes('haze')){
-        gradient = 'linear-gradient(180deg, #e0c3fc 0%, #8ec5fc 100%)'; // purple/blue
-    } else {
-        gradient = 'linear-gradient(180deg, #b2fefa 0%, #f6d365 100%)'; // default
-    }
-    card.style.background = gradient;
+    
+    
+    
     //create elements
     const city_display = document.createElement("h1");
     const speed_display = document.createElement("p");
