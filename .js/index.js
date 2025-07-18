@@ -5,6 +5,7 @@ const card = document.querySelector(`.card`);
 
 
 
+
 weather_form.addEventListener("submit", async event => {
     event.preventDefault();
     const city = city_input.value;
@@ -91,6 +92,8 @@ function display_weather_info(data){
     const { id, description } = weather[0];
     card.textContent = "";
     card.style.display = "flex";
+   
+    
 
     
     
@@ -101,7 +104,7 @@ function display_weather_info(data){
     const visibility_display = document.createElement("p");
     const temp_display = document.createElement("p");
     const humidity_display = document.createElement("p");
-    const sea_level_display = document.createElement("p");
+    const sea_level_display = document.createElement("div");
     const weather_description = document.createElement("p");
     const weather_emoji_display = document.createElement("p");
     //give data to the elements
@@ -113,6 +116,11 @@ function display_weather_info(data){
     sea_level_display.textContent = `Sea Level :${sea_level ? sea_level : 'N/A'}`;
     weather_description.textContent = capitalize(description);
     weather_emoji_display.textContent = get_weather_emoji(id);
+    const seaLevelValue = sea_level ? sea_level : 0;
+    sea_level_display.innerHTML = `
+      <span>Sea Level: ${sea_level ? sea_level + " m" : "N/A"}</span>
+       ${sea_level ? `<meter min="900" max="1100" value="${seaLevelValue}" style="width:120px;"></meter>` : ""}
+    `;
 
     //add CSS properties to the elements
     city_display.classList.add(`city_display`);

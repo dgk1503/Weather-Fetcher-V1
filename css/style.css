@@ -136,7 +136,7 @@ button[type = "submit"]:hover{
     font-weight: bold;
     font-family: inherit;
     margin: 8px 0 4px 0;
-    color: #ff9800;
+    color: #ffffff;
 }
 .humidity_display,.sea_level_display{
     font-size: 1.2rem;
@@ -153,7 +153,7 @@ button[type = "submit"]:hover{
     color: #3a3a3a;
 }
 .weather_emoji{
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin: 10px 0 0 0;
 }
 .error_display{
@@ -161,4 +161,19 @@ button[type = "submit"]:hover{
     color: #d32f2f;
     font-weight: bold;
     margin: 10px 0;
+}
+
+.sea-level-bar-bg {
+  width: 120px;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.sea-level-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00c6fb 0%, #005bea 100%);
+  border-radius: 5px 0 0 5px;
+  transition: width 0.4s;
 }
