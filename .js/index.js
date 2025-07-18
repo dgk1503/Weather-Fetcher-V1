@@ -1,4 +1,4 @@
-import api_key from './apikey.js';
+const api_key = `e8d0433e2df969ee92282de039488cc8`;
 const weather_form = document.querySelector(`.weather_form`)
 const city_input = document.querySelector(`.city_input`);
 const card = document.querySelector(`.card`);
