@@ -92,6 +92,10 @@ function display_weather_info(data){
     const { id, description } = weather[0];
     card.textContent = "";
     card.style.display = "flex";
+    card.classList.remove("fade-in");
+    void card.offsetWidth;
+
+    card.classList.add("fade-in");
    
     
 
