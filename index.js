@@ -95,7 +95,7 @@ function display_weather_info(data){
     card.classList.remove("fade-in");
     void card.offsetWidth;
 
-    card.classList.add("fade-in");
+    card.classList.add("fade-in")
    
     
 
