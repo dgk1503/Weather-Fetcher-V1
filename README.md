@@ -1,5 +1,7 @@
 🌤️ Live Weather Fetcher
 
+Live Link - https://weather-fetcher-v1.netlify.app/
+
 A simple and elegant web application that allows users to fetch real-time weather information by entering any city name.
 Built using HTML, CSS, and JavaScript.
 
